@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<title>Inscription au colloque</title>
+<style>
+body {
+  font-family: Arial;
+  text-align: center;
+  margin-top: 80px;
+}
+
+img {
+  width: 250px;
+  margin-top: 30px;
+  display: none; /* cachée au départ */
+  border-radius: 10px;
+}
+</style>
+</head>
+<body>
+
+<h1 id="titre">Inscription en cours...</h1>
+<p id="texte">Merci de patienter</p>
+
+<img id="cyril" src="cyril.jpg" alt="Cyril">
+
+<script>
+setTimeout(function() {
+  document.getElementById("titre").innerHTML = "Votre place a disparu.";
+  document.getElementById("texte").innerHTML =
+    "Cyril THOMAS vous remercie pour votre participation à l’étude sur la prestidigitation.";
+
+  document.getElementById("cyril").style.display = "block";
+}, 2000);
+</script>
+
+</body>
+</html>

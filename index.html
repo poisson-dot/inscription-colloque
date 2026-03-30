@@ -5,23 +5,39 @@
 <title>Inscription au colloque</title>
 <style>
 body {
-  font-family: Arial;
+  font-family: Arial, sans-serif;
   text-align: center;
-  margin-top: 80px;
+  margin: 0;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center; /* centre verticalement */
+  align-items: center;     /* centre horizontalement */
 }
 
 img {
-  width: 250px;
+  width: 300px;
   margin-top: 30px;
   display: none; /* cachée au départ */
-  border-radius: 10px;
+  border-radius: 12px;
+}
+
+/* Animation clignotante */
+.blink {
+  animation: blink-animation 0.8s infinite;
+}
+
+@keyframes blink-animation {
+  0% { opacity: 1; }
+  50% { opacity: 0; }
+  100% { opacity: 1; }
 }
 </style>
 </head>
 <body>
 
 <h1 id="titre">Inscription en cours...</h1>
-<p id="texte">Merci de patienter</p>
+<p id="texte">Merci de patienter, vérification des places disponibles...</p>
 
 <img id="cyril" src="cyril.jpg" alt="Cyril">
 
@@ -31,8 +47,10 @@ setTimeout(function() {
   document.getElementById("texte").innerHTML =
     "Cyril THOMAS vous remercie pour votre participation à l’étude sur la prestidigitation.";
 
-  document.getElementById("cyril").style.display = "block";
-}, 2000);
+  let img = document.getElementById("cyril");
+  img.style.display = "block";
+  img.classList.add("blink");
+}, 5000); // 5 secondes
 </script>
 
 </body>
